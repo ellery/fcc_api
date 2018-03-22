@@ -8,7 +8,7 @@ require 'active_support/all'
 module FccApi
    class CensusBlock
      def initialize
-       @base_uri = "http://data.fcc.gov/api/"
+       @base_uri = "https://geo.fcc.gov/api/census/"
      end
     
      def get_all(lat, lon)
