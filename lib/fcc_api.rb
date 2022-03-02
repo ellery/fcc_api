@@ -11,23 +11,25 @@ module FccApi
        @base_uri = "https://geo.fcc.gov/api/census/"
      end
     
-     def get_all(lat, lon)
+     def get_all(lat, lon, year = "2010")
        request ={
          "format" => "json",
          "latitude" => lat,
          "longitude" => lon,
-         "showall" => "true" 
+         "showall" => "true",
+         "censusYear" => year 
        }
        make_http_call(request, "block/find")
                
      end
      
-     def get(lat, lon)
+     def get(lat, lon, year = "2010")
        request ={
          "format" => "json",
          "latitude" => lat,
          "longitude" => lon,
-         "showall" => "false" 
+         "showall" => "false",
+         "censusYear" => year 
        }
        make_http_call(request, "block/find")
                
